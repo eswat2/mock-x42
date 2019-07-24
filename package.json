@@ -1,5 +1,5 @@
 {
-  "name": "mock-auto",
+  "name": "mock-x42",
   "version": "0.0.2",
   "private": true,
   "main": "server.js",
@@ -7,7 +7,7 @@
   "engines": {
     "node": "11.15.0",
     "npm": "6.9.0",
-    "yarn": "1.17.0"
+    "yarn": "1.17.3"
   },
   "prettier": {
     "trailingComma": "es5",
