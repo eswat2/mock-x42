@@ -1,6 +1,8 @@
 {
   "name": "mock-x42",
   "version": "0.0.2",
+  "description": "secret",
+  "homepage": "https://eswat2.github.io/mock-x42",
   "private": true,
   "main": "server.js",
   "engineStrict": true,
