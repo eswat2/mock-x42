@@ -8,6 +8,12 @@ const createID = () => {
   return Date.now()
 }
 
+const createSSNs = (count, dashes) => {
+  return chance.unique(chance.ssn, count, {
+    dashes: dashes === 'true',
+  })
+}
+
 const createVINs = count => {
   return chance.unique(vinGenerator.generateVin, count)
 }
@@ -22,6 +28,7 @@ const delay = () => {
 module.exports = {
   compare,
   createID,
+  createSSNs,
   createVINs,
   delay,
 }

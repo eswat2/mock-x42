@@ -53,6 +53,12 @@ router.get('/id', (req, res) => {
   res.json({ id: mock.createID() })
 })
 
+router.get('/ssns', (req, res) => {
+  const count = req.query.count || 3
+  const dashes = req.query.dashes || false
+  res.json(mock.createSSNs(count, dashes))
+})
+
 router.get('/vins', (req, res) => {
   const count = req.query.count || 3
   res.json(mock.createVINs(count))
