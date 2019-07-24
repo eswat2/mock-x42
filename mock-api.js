@@ -1,7 +1,6 @@
 const Chance = require('chance')
 const faker = require('faker')
 const vinGenerator = require('vin-generator')
-const gts = require('./gtsports')
 
 const chance = new Chance()
 
