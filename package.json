@@ -1,0 +1,30 @@
+{
+  "name": "mock-auto",
+  "version": "0.0.2",
+  "private": true,
+  "main": "server.js",
+  "engineStrict": true,
+  "engines": {
+    "node": "11.15.0",
+    "npm": "6.9.0",
+    "yarn": "1.17.0"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  },
+  "dependencies": {
+    "axios": "0.19.0",
+    "chance": "1.0.18",
+    "express": "4.17.1",
+    "faker": "4.1.0",
+    "node-cache": "4.2.0",
+    "vin-generator": "1.0.1"
+  },
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  }
+}
