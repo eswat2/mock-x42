@@ -18,6 +18,10 @@ const createVINs = count => {
   return chance.unique(vinGenerator.generateVin, count)
 }
 
+const slug = count => {
+  return faker.lorem.slug(count)
+}
+
 // NOTE:  verify the data... (property order matters)
 const compare = (a, b) => JSON.stringify(a) === JSON.stringify(b)
 
@@ -31,4 +35,5 @@ module.exports = {
   createSSNs,
   createVINs,
   delay,
+  slug,
 }
