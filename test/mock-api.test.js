@@ -7,13 +7,13 @@ const { expect } = chai
 
 describe('mock-api test suite', () => {
   describe('delay', () => {
-    const value = mock.delay()
-    it('should return a number', () => {
-      expect(value).to.be.a('number')
-    })
-    it('should be between 500 & 3500', () => {
-      expect(value).to.be.lessThan(3501)
-      expect(value).to.be.greaterThan(499)
+    const tests = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    tests.forEach(step => {
+      const value = mock.delay()
+      it(`${step}. should return a number between 500 & 3500 -- ${value}`, () => {
+        expect(value).to.be.a('number')
+        expect(value).to.be.within(500, 3500)
+      })
     })
   })
 
