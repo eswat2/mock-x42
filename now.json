@@ -23,6 +23,16 @@
       "methods": ["GET"]
     },
     {
+      "src": "/api/slug",
+      "dest": "/server.js",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/api/ssns",
+      "dest": "/server.js",
+      "methods": ["GET"]
+    },
+    {
       "src": "/api/vins",
       "dest": "/server.js",
       "methods": ["GET"]
