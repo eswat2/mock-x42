@@ -1,7 +1,9 @@
+const mocha = require('mocha')
 const chai = require('chai')
 const mock = require('../mock-api')
-const assert = chai.assert
-const expect = chai.expect
+
+const { describe, it } = mocha
+const { expect } = chai
 
 describe('mock-api test suite', () => {
   describe('delay', () => {
