@@ -54,18 +54,18 @@ router.get('/id', (req, res) => {
 })
 
 router.get('/slug', (req, res) => {
-  const count = req.query.count || 3
+  const count = req.query.count
   res.json(mock.slug(count))
 })
 
 router.get('/ssns', (req, res) => {
-  const count = req.query.count || 3
-  const dashes = req.query.dashes || false
+  const count = req.query.count
+  const dashes = req.query.dashes
   res.json(mock.ssns(count, dashes))
 })
 
 router.get('/vins', (req, res) => {
-  const count = req.query.count || 3
+  const count = req.query.count
   res.json(mock.vins(count))
 })
 

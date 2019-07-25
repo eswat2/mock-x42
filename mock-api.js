@@ -8,17 +8,17 @@ const id = () => {
   return Date.now()
 }
 
-const ssns = (count, dashes) => {
+const ssns = (count = 3, dashes = false) => {
   return chance.unique(chance.ssn, count, {
     dashes: dashes === 'true',
   })
 }
 
-const vins = count => {
+const vins = (count = 3) => {
   return chance.unique(vinGenerator.generateVin, count)
 }
 
-const slug = count => {
+const slug = (count = 3) => {
   return faker.lorem.slug(count)
 }
 
