@@ -20,7 +20,7 @@ describe('mock-api', () => {
       const words = value.split('-')
       expect(words).to.have.lengthOf(3)
     })
-    it('should return 4 works when requested', () => {
+    it('should contain 4 words when requested', () => {
       const value = mock.slug(4)
       const words = value.split('-')
       expect(words).to.have.lengthOf(4)
