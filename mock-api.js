@@ -4,8 +4,16 @@ const vinGenerator = require('vin-generator')
 
 const chance = new Chance()
 
+const delay = () => {
+  return chance.integer({ min: 500, max: 3500 })
+}
+
 const id = () => {
   return Date.now()
+}
+
+const slug = (count = 3) => {
+  return faker.lorem.slug(count)
 }
 
 const ssns = (count = 3, dashes = false) => {
@@ -18,19 +26,7 @@ const vins = (count = 3) => {
   return chance.unique(vinGenerator.generateVin, count)
 }
 
-const slug = (count = 3) => {
-  return faker.lorem.slug(count)
-}
-
-// NOTE:  verify the data... (property order matters)
-const compare = (a, b) => JSON.stringify(a) === JSON.stringify(b)
-
-const delay = () => {
-  return chance.integer({ min: 500, max: 3500 })
-}
-
 module.exports = {
-  compare,
   delay,
   id,
   slug,

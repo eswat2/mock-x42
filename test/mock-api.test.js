@@ -3,7 +3,18 @@ const mock = require('../mock-api')
 const assert = chai.assert
 const expect = chai.expect
 
-describe('mock-api', () => {
+describe('mock-api test suite', () => {
+  describe('delay', () => {
+    const value = mock.delay()
+    it('should return a number', () => {
+      expect(value).to.be.a('number')
+    })
+    it('should be between 500 & 3500', () => {
+      expect(value).to.be.lessThan(3501)
+      expect(value).to.be.greaterThan(499)
+    })
+  })
+
   describe('id', () => {
     const value = mock.id()
     it('should return a number', () => {
