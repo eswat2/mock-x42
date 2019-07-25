@@ -50,23 +50,23 @@ router.get('/', (req, res) => {
 // more routes for our API will happen here
 
 router.get('/id', (req, res) => {
-  res.json({ id: mock.createID() })
+  res.json({ id: mock.id() })
 })
 
 router.get('/slug', (req, res) => {
   const count = req.query.count || 3
-  res.json(mock.slog(count))
+  res.json(mock.slug(count))
 })
 
 router.get('/ssns', (req, res) => {
   const count = req.query.count || 3
   const dashes = req.query.dashes || false
-  res.json(mock.createSSNs(count, dashes))
+  res.json(mock.ssns(count, dashes))
 })
 
 router.get('/vins', (req, res) => {
   const count = req.query.count || 3
-  res.json(mock.createVINs(count))
+  res.json(mock.vins(count))
 })
 
 // REGISTER OUR ROUTES -------------------------------

@@ -4,17 +4,17 @@ const vinGenerator = require('vin-generator')
 
 const chance = new Chance()
 
-const createID = () => {
+const id = () => {
   return Date.now()
 }
 
-const createSSNs = (count, dashes) => {
+const ssns = (count, dashes) => {
   return chance.unique(chance.ssn, count, {
     dashes: dashes === 'true',
   })
 }
 
-const createVINs = count => {
+const vins = count => {
   return chance.unique(vinGenerator.generateVin, count)
 }
 
@@ -31,9 +31,9 @@ const delay = () => {
 
 module.exports = {
   compare,
-  createID,
-  createSSNs,
-  createVINs,
   delay,
+  id,
   slug,
+  ssns,
+  vins,
 }
