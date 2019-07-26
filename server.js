@@ -39,39 +39,12 @@ app.use((req, res, next) => {
 
 const port = process.env.PORT || 8180 // set our port
 
-// ROUTES FOR OUR API
-// =============================================================================
-const router = express.Router() // get an instance of the express Router
-
-router.get('/', (req, res) => {
-  res.json({ message: 'hooray! welcome to our api!...' })
-})
-
-// more routes for our API will happen here
-
-router.get('/id', (req, res) => {
-  res.json({ id: mock.id() })
-})
-
-router.get('/slug', (req, res) => {
-  const count = req.query.count
-  res.json(mock.slug(count))
-})
-
-router.get('/ssns', (req, res) => {
-  const count = req.query.count
-  const dashes = req.query.dashes
-  res.json(mock.ssns(count, dashes))
-})
-
-router.get('/vins', (req, res) => {
-  const count = req.query.count
-  res.json(mock.vins(count))
-})
-
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
-app.use('/api', router)
+{
+  const router = mock.createRouter(express)
+  app.use('/api', router)
+}
 
 app.get('/', function(req, res) {
   res.json({ message: 'hooray! welcome to our server!...' })
