@@ -9,7 +9,7 @@ const createRouter = express => {
   const router = express.Router() // get an instance of the express Router
 
   router.get('/', (req, res) => {
-    res.json({ message: 'hooray! welcome to our mock api!...' })
+    res.json({ message: 'hooray! welcome to our Mock api!...' })
   })
 
   // more routes for our API will happen here

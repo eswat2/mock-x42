@@ -18,17 +18,17 @@
       "methods": ["GET"]
     },
     {
-      "src": "/api/id",
-      "dest": "/server.js",
-      "methods": ["GET"]
-    },
-    {
       "src": "/api/slug",
       "dest": "/server.js",
       "methods": ["GET"]
     },
     {
       "src": "/api/ssns",
+      "dest": "/server.js",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/api/uuid",
       "dest": "/server.js",
       "methods": ["GET"]
     },
