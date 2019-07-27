@@ -1,14 +1,17 @@
 // server.js
+// cSpell:ignore checkperiod
 
 // BASE SETUP
 // =============================================================================
+/* eslint-disable no-unused-vars */
 
 // call the packages we need
 const express = require('express') // call express
 const app = express() // define our app using express
 const bodyParser = require('body-parser')
 const NodeCache = require('node-cache')
-const mock = require('./mock-api')
+const mock = require('./api/mock')
+const api = require('./api/router')
 
 // NOTE:  data is purged after 5 minutes...
 const myCache = new NodeCache({ stdTTL: 300, checkperiod: 320 })
@@ -18,7 +21,6 @@ const myCache = new NodeCache({ stdTTL: 300, checkperiod: 320 })
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-// NOTE:  we're providing this to export SVG icons
 app.use(express.static('public'))
 
 // simulate delay response
@@ -42,7 +44,7 @@ const port = process.env.PORT || 8180 // set our port
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 {
-  const router = mock.createRouter(express)
+  const router = api.createRouter(express)
   app.use('/api', router)
 }
 

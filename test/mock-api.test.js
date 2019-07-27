@@ -3,11 +3,13 @@
 
 const mocha = require('mocha')
 const chai = require('chai')
-const mock = require('../mock-api')
+const mock = require('../api/mock')
+const router = require('../api/router')
 
 const { describe, it } = mocha
 const { expect } = chai
-const { createRouter, delay, utils } = mock
+const { delay, utils } = mock
+const { createRouter } = router
 
 describe('mock-api test suite', () => {
   describe('createRouter', () => {
