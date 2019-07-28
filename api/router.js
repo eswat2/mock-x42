@@ -1,7 +1,9 @@
 // api/router.js
 // cSpell:ignore ssns
 
-const { utils } = require('./mock')
+const { mocks, utils } = require('./mock')
+const { slugGet, ssnsGet, uuidGet, vinsGet } = mocks
+const { respondTo } = utils
 
 // ROUTE Factory for our API
 // =============================================================================
@@ -16,22 +18,22 @@ const createRouter = express => {
 
   router.get('/slug', (req, res) => {
     const count = req.query.count
-    res.json(utils.slug(count))
+    respondTo(res, slugGet(count))
   })
 
   router.get('/ssns', (req, res) => {
     const count = req.query.count
     const dashes = req.query.dashes
-    res.json(utils.ssns(count, dashes))
+    respondTo(res, ssnsGet(count, dashes))
   })
 
   router.get('/uuid', (req, res) => {
-    res.json(utils.uuid())
+    respondTo(res, uuidGet())
   })
 
   router.get('/vins', (req, res) => {
     var count = req.query.count || 3
-    res.json(utils.vins(count))
+    respondTo(res, vinsGet(count))
   })
 
   return router

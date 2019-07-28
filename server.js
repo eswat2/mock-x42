@@ -10,7 +10,7 @@ const express = require('express') // call express
 const app = express() // define our app using express
 const bodyParser = require('body-parser')
 const NodeCache = require('node-cache')
-const mock = require('./api/mock')
+const { utils } = require('./api/mock')
 const api = require('./api/router')
 
 // NOTE:  data is purged after 5 minutes...
@@ -25,7 +25,7 @@ app.use(express.static('public'))
 
 // simulate delay response
 app.use((req, res, next) => {
-  const delay = mock.delay()
+  const delay = utils.delay()
   setTimeout(() => next(), delay)
 })
 

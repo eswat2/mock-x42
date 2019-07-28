@@ -11,32 +11,66 @@ const delay = () => {
   return chance.integer({ min: 500, max: 3500 })
 }
 
-const slug = (count = 3) => {
-  return faker.lorem.slug(count)
+const slugGet = (count = 3) => {
+  const data = faker.lorem.slug(count)
+  return {
+    status: 200,
+    header: { 'x-mock-api': 'slug', 'x-mock-count': count },
+    data,
+  }
 }
 
-const ssns = (count = 3, dashes) => {
-  return chance.unique(chance.ssn, count, {
+const ssnsGet = (count = 3, dashes) => {
+  const data = chance.unique(chance.ssn, count, {
     dashes: dashes === 'true',
   })
+  return {
+    status: 200,
+    header: { 'x-mock-api': 'ssns', 'x-mock-count': count },
+    data,
+  }
 }
 
-const uuid = () => {
-  return faker.random.uuid()
+const uuidGet = () => {
+  const data = faker.random.uuid()
+  return {
+    status: 200,
+    header: { 'x-mock-api': 'uuid' },
+    data,
+  }
 }
 
-const vins = (count = 3) => {
-  return chance.unique(vinGenerator.generateVin, count)
+const vinsGet = (count = 3) => {
+  const data = chance.unique(vinGenerator.generateVin, count)
+  return {
+    status: 200,
+    header: { 'x-mock-api': 'vins', 'x-mock-count': count },
+    data,
+  }
+}
+
+const respondTo = (res, mock) => {
+  const { status, header, data } = mock
+  const keys = Object.keys(header)
+  keys.forEach(key => {
+    res.header(key, header[key])
+  })
+  res.status(status).json(data)
+}
+
+const mocks = {
+  slugGet,
+  ssnsGet,
+  uuidGet,
+  vinsGet,
 }
 
 const utils = {
-  slug,
-  ssns,
-  uuid,
-  vins,
+  delay,
+  respondTo,
 }
 
 module.exports = {
-  delay,
+  mocks,
   utils,
 }
