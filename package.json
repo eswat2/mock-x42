@@ -28,7 +28,7 @@
     "start": "node server",
     "dev": "nodemon server",
     "test": "mocha",
-    "ci": "mocha --watch",
+    "ct": "mocha --watch",
     "coverage": "nyc mocha"
   },
   "devDependencies": {
