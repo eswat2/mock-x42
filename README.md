@@ -21,44 +21,105 @@ Magic happens here -- http://localhost:8180
 
 ## tests
 
-- `yarn test`
+- `yarn test` - _run tests, single pass_
+- `yarn ct` - _run tests, continuously_
+- `yarn coverage` - _run coverage report_
 
 ```
-➜  mock-imps git:(master) ✗ yarn test
+➜  mock-x42 git:(master) yarn coverage
 yarn run v1.17.3
-$ mocha
+$ nyc mocha
 
 
   mock-api test suite
-    delay
-      ✓ 1. should return a number between 500 & 3500 -- 3112
-      ✓ 2. should return a number between 500 & 3500 -- 712
-      ✓ 3. should return a number between 500 & 3500 -- 1511
-      ✓ 4. should return a number between 500 & 3500 -- 3497
-      ✓ 5. should return a number between 500 & 3500 -- 2573
-      ✓ 6. should return a number between 500 & 3500 -- 1092
-      ✓ 7. should return a number between 500 & 3500 -- 821
-      ✓ 8. should return a number between 500 & 3500 -- 1323
-      ✓ 9. should return a number between 500 & 3500 -- 1823
-    id
-      ✓ should return a number
-    slug
-      ✓ should return a string
-      ✓ should contain 3 words by default
-      ✓ should contain 4 words when requested
-    ssns
-      ✓ should return an array
-      ✓ should return 3 items by default
-      ✓ should return 10 items when requested
-    vins
-      ✓ should return an array
-      ✓ should return 3 items by default
-      ✓ should return 20 items when requested
+    respondTo
+      ✓ should be a function
+      ✓ should call header
+      ✓ should call status
+      ✓ should call json
+    utils test suite
+      delay
+        ✓ 1. should return a number between 500 & 3500 -- 3014
+        ✓ 2. should return a number between 500 & 3500 -- 3038
+        ✓ 3. should return a number between 500 & 3500 -- 1029
+        ✓ 4. should return a number between 500 & 3500 -- 1955
+        ✓ 5. should return a number between 500 & 3500 -- 1173
+        ✓ 6. should return a number between 500 & 3500 -- 1486
+        ✓ 7. should return a number between 500 & 3500 -- 530
+        ✓ 8. should return a number between 500 & 3500 -- 1829
+        ✓ 9. should return a number between 500 & 3500 -- 3158
+    mocks test suite
+      slugGet
+        ✓ data: should contain 3 words by default
+        ✓ data: should contain 4 words when requested
+        generalApi test suite - slug
+          ✓ api: should be a function
+          ✓ api: should return an object
+          ✓ api: should include 3 properties: status, header, data
+          ✓ api: should return status set to 200
+          ✓ api; should return header with x-mock-api slug
+          ✓ api; should return header with x-mock-count 3
+          ✓ api: should return data as string
+      ssnsGet
+        ✓ data: should return 3 items by default
+        ✓ data: should return 10 items when requested
+        generalApi test suite - ssns
+          ✓ api: should be a function
+          ✓ api: should return an object
+          ✓ api: should include 3 properties: status, header, data
+          ✓ api: should return status set to 200
+          ✓ api; should return header with x-mock-api ssns
+          ✓ api; should return header with x-mock-count 3
+          ✓ api: should return data as array
+      uuidGet
+        ✓ data: should contain dashes
+        ✓ data: should contain dashes -- 5
+        generalApi test suite - uuid
+          ✓ api: should be a function
+          ✓ api: should return an object
+          ✓ api: should include 3 properties: status, header, data
+          ✓ api: should return status set to 200
+          ✓ api; should return header with x-mock-api uuid
+          ✓ api: should return data as string
+      vinsGet
+        ✓ data: should return 3 items by default
+        ✓ data: should return 10 items when requested
+        generalApi test suite - vins
+          ✓ api: should be a function
+          ✓ api: should return an object
+          ✓ api: should include 3 properties: status, header, data
+          ✓ api: should return status set to 200
+          ✓ api; should return header with x-mock-api vins
+          ✓ api; should return header with x-mock-count 3
+          ✓ api: should return data as array
+
+  app router test suite
+    createRouter
+      ✓ should be a function
+      ✓ should return an object
+    api test suite
+      api
+        ✓ should respond to api with object
+      api/slug
+        ✓ should respond to api/slug with string
+      api/ssns
+        ✓ should respond to api/ssns with array
+      api/uuid
+        ✓ should respond to api/uuid with string
+      api/vins
+        ✓ should respond to api/vins with array
 
 
-  19 passing (21ms)
+  55 passing (55ms)
 
-✨  Done in 0.52s.
+-----------|----------|----------|----------|----------|-------------------|
+File       |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+-----------|----------|----------|----------|----------|-------------------|
+All files  |      100 |      100 |      100 |      100 |                   |
+ mock.js   |      100 |      100 |      100 |      100 |                   |
+ router.js |      100 |      100 |      100 |      100 |                   |
+-----------|----------|----------|----------|----------|-------------------|
+✨  Done in 2.72s.
 ```
 
 ## dependencies
@@ -66,10 +127,13 @@ $ mocha
 - [Chai][chai-js] - _a BDD / TDD assertion library_
 - [Chance][chance-js]
 - [Faker][faker-js]
+- [Istanbul][ist-js] - _JavaScript test coverage made simple_
 - [Mocha][mocha-js] - _a JavaScript test framework_
 - [node-cache][node-cache] - _simple in memory caching_
 - [nodemon][nodemon-io] - _reload, automatically_
+- [nyc][nyc-js] - _the Istanbul command line interface_
 - [Sinon][sinon-js] - _test spies, stubs and mocks_
+- [supertest][super-js] - _library for testing node.js_
 - [vin-generator][vin-gen]
 
 
@@ -80,10 +144,13 @@ $ mocha
 [chai-js]: https://www.chaijs.com/
 [chance-js]: https://chancejs.com/
 [faker-js]: https://github.com/marak/Faker.js/
+[ist-js]: https://istanbul.js.org/
 [mocha-js]: https://mochajs.org/
 [node-cache]: http://mpneuried.github.io/nodecache/
 [nodemon-io]: https://nodemon.io/
+[nyc-js]: https://github.com/istanbuljs/nyc
 [sinon-js]: https://sinonjs.org/
+[super-js]: https://github.com/visionmedia/supertest
 [vin-gen]: https://github.com/ArchmageInc/vin-generator
 
 
