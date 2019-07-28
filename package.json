@@ -27,11 +27,15 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
-    "test": "mocha"
+    "test": "mocha",
+    "ci": "mocha --watch",
+    "coverage": "nyc mocha"
   },
   "devDependencies": {
     "chai": "4.2.0",
     "mocha": "6.2.0",
-    "sinon": "7.3.2"
+    "nyc": "^14.1.1",
+    "sinon": "7.3.2",
+    "supertest": "^4.0.2"
   }
 }

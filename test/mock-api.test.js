@@ -5,13 +5,17 @@ const mocha = require('mocha')
 const chai = require('chai')
 const sinon = require('sinon')
 const { mocks, utils } = require('../api/mock')
-const router = require('../api/router')
 
 const { describe, it } = mocha
 const { expect } = chai
 const { slugGet, ssnsGet, uuidGet, vinsGet } = mocks
 const { delay, respondTo } = utils
-const { createRouter } = router
+
+const fakeApi = {
+  status: 200,
+  header: { 'x-fake': 42 },
+  data: { id: 42 },
+}
 
 const header = sinon.spy()
 const status = sinon.spy()
@@ -71,9 +75,21 @@ const generalApi = (tag, type, value, count) => {
 }
 
 describe('mock-api test suite', () => {
-  describe('createRouter', () => {
+  describe('respondTo', () => {
     it('should be a function', () => {
-      expect(createRouter).to.be.a('function')
+      expect(respondTo).to.be.a('function')
+    })
+
+    respondTo(res, fakeApi)
+
+    it('should call header', () => {
+      expect(header.callCount).to.equal(1)
+    })
+    it('should call status', () => {
+      expect(status.callCount).to.equal(1)
+    })
+    it('should call json', () => {
+      expect(json.callCount).to.equal(1)
     })
   })
 
