@@ -28,24 +28,29 @@ describe('app router test suite', () => {
 
   describe('api test suite', () => {
     const tests = [
-      { name: '', type: 'object' },
+      { name: '', type: 'object', props: ['message'] },
       { name: '/slug', type: 'string' },
-      { name: '/ssns', type: 'array' },
+      { name: '/ssns', type: 'array', count: 3 },
       { name: '/uuid', type: 'string' },
-      { name: '/vins', type: 'array' },
+      { name: '/vins', type: 'array', count: 3 },
     ]
 
     tests.forEach(api => {
       describe(`api${api.name}`, () => {
-        it(`should respond to api${api.name}`, () => {
+        it(`should respond to api${api.name} with ${api.type}`, () => {
           request(app)
             .get(`/api${api.name}`)
             .expect('Content-Type', /json/)
             .expect(200)
             .expect(res => {
               expect(res.body).to.be.a(api.type)
-              if (api.type === 'array') {
-                expect(res.body).to.have.lengthOf(3)
+              if (api.count) {
+                expect(res.body).to.have.lengthOf(api.count)
+              }
+              if (api.props) {
+                api.props.forEach(prop => {
+                  expect(res.body).to.have.property(prop)
+                })
               }
             })
             .end(function(err, res) {
