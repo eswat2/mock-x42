@@ -31,14 +31,32 @@ describe('app router test suite', () => {
   describe('api test suite', () => {
     const tests = [
       { name: '', type: 'object', props: ['message'] },
-      { name: '/slug', type: 'string' },
-      { name: '/ssns', type: 'array', count: 3 },
-      { name: '/uuid', type: 'string' },
-      { name: '/vins', type: 'array', count: 3 },
+      {
+        name: '/slug',
+        type: 'string',
+        headers: ['x-mock-api', 'x-mock-count'],
+      },
+      {
+        name: '/ssns',
+        type: 'array',
+        count: 3,
+        headers: ['x-mock-api', 'x-mock-count'],
+      },
+      {
+        name: '/uuid',
+        type: 'string',
+        headers: ['x-mock-api'],
+      },
+      {
+        name: '/vins',
+        type: 'array',
+        count: 3,
+        headers: ['x-mock-api', 'x-mock-count'],
+      },
     ]
 
     tests.forEach(api => {
-      describe(`api${api.name}`, () => {
+      describe(`GET: api${api.name}`, () => {
         it(`should respond to api${api.name} with ${api.type}`, () => {
           request(app)
             .get(`/api${api.name}`)
@@ -52,6 +70,11 @@ describe('app router test suite', () => {
               if (api.props) {
                 api.props.forEach(prop => {
                   expect(res.body).to.have.property(prop)
+                })
+              }
+              if (api.headers) {
+                api.headers.forEach(prop => {
+                  expect(res.header).to.have.property(prop)
                 })
               }
             })

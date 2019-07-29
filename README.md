@@ -82,28 +82,28 @@ $ nyc mocha
       ✓ should be a function
       ✓ should return an object
     api test suite
-      api
+      GET: api
         ✓ should respond to api with object
-      api/slug
+      GET: api/slug
         ✓ should respond to api/slug with string
-      api/ssns
+      GET: api/ssns
         ✓ should respond to api/ssns with array
-      api/uuid
+      GET: api/uuid
         ✓ should respond to api/uuid with string
-      api/vins
+      GET: api/vins
         ✓ should respond to api/vins with array
 
   utils test suite
     delay
-      ✓ 1. should return a number between 500 & 3500 -- 2547
-      ✓ 2. should return a number between 500 & 3500 -- 1721
-      ✓ 3. should return a number between 500 & 3500 -- 688
-      ✓ 4. should return a number between 500 & 3500 -- 2044
-      ✓ 5. should return a number between 500 & 3500 -- 1402
-      ✓ 6. should return a number between 500 & 3500 -- 2759
-      ✓ 7. should return a number between 500 & 3500 -- 2274
-      ✓ 8. should return a number between 500 & 3500 -- 2037
-      ✓ 9. should return a number between 500 & 3500 -- 2188
+      ✓ 1. should return a number between 500 & 3500 -- 2731
+      ✓ 2. should return a number between 500 & 3500 -- 2766
+      ✓ 3. should return a number between 500 & 3500 -- 1255
+      ✓ 4. should return a number between 500 & 3500 -- 798
+      ✓ 5. should return a number between 500 & 3500 -- 2595
+      ✓ 6. should return a number between 500 & 3500 -- 2313
+      ✓ 7. should return a number between 500 & 3500 -- 2770
+      ✓ 8. should return a number between 500 & 3500 -- 2801
+      ✓ 9. should return a number between 500 & 3500 -- 1867
     respondTo
       ✓ should be a function
       ✓ should call header
@@ -121,7 +121,7 @@ All files  |      100 |      100 |      100 |      100 |                   |
  router.js |      100 |      100 |      100 |      100 |                   |
  utils.js  |      100 |      100 |      100 |      100 |                   |
 -----------|----------|----------|----------|----------|-------------------|
-✨  Done in 1.80s.
+✨  Done in 1.78s.
 ```
 
 ## dependencies
