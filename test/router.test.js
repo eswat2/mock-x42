@@ -1,5 +1,6 @@
 // router.test.js
 // cSpell:ignore ssns
+/* eslint-disable no-unused-vars */
 
 const mocha = require('mocha')
 const chai = require('chai')
@@ -7,6 +8,8 @@ const request = require('supertest')
 const express = require('express')
 
 const { createRouter } = require('../api/router')
+const { responseTests } = require('./responseTests')
+
 const { describe, it } = mocha
 const { expect } = chai
 
@@ -63,20 +66,7 @@ describe('app router test suite', () => {
             .expect('Content-Type', /json/)
             .expect(200)
             .expect(res => {
-              expect(res.body).to.be.a(api.type)
-              if (api.count) {
-                expect(res.body).to.have.lengthOf(api.count)
-              }
-              if (api.props) {
-                api.props.forEach(prop => {
-                  expect(res.body).to.have.property(prop)
-                })
-              }
-              if (api.headers) {
-                api.headers.forEach(prop => {
-                  expect(res.header).to.have.property(prop)
-                })
-              }
+              responseTests(res, api)
             })
             .end(function(err, res) {
               if (err) throw err
