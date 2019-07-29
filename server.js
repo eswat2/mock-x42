@@ -10,7 +10,7 @@ const express = require('express') // call express
 const app = express() // define our app using express
 const bodyParser = require('body-parser')
 const NodeCache = require('node-cache')
-const { utils } = require('./api/mock')
+const utils = require('./api/utils')
 const api = require('./api/router')
 
 // NOTE:  data is purged after 5 minutes...

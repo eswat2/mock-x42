@@ -1,9 +1,8 @@
 // api/router.js
 // cSpell:ignore ssns
 
-const { mocks, utils } = require('./mock')
-const { slugGet, ssnsGet, uuidGet, vinsGet } = mocks
-const { respondTo } = utils
+const { slugGet, ssnsGet, uuidGet, vinsGet } = require('./mock')
+const { respondTo } = require('./utils')
 
 // ROUTE Factory for our API
 // =============================================================================

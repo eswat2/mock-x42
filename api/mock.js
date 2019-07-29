@@ -7,10 +7,6 @@ const vinGenerator = require('vin-generator')
 
 const chance = new Chance()
 
-const delay = () => {
-  return chance.integer({ min: 500, max: 3500 })
-}
-
 const slugGet = (count = 3) => {
   const data = faker.lorem.slug(count)
   return {
@@ -49,28 +45,9 @@ const vinsGet = (count = 3) => {
   }
 }
 
-const respondTo = (res, mock) => {
-  const { status, header, data } = mock
-  const keys = Object.keys(header)
-  keys.forEach(key => {
-    res.header(key, header[key])
-  })
-  res.status(status).json(data)
-}
-
-const mocks = {
+module.exports = {
   slugGet,
   ssnsGet,
   uuidGet,
   vinsGet,
-}
-
-const utils = {
-  delay,
-  respondTo,
-}
-
-module.exports = {
-  mocks,
-  utils,
 }

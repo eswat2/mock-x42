@@ -26,28 +26,12 @@ Magic happens here -- http://localhost:8180
 - `yarn coverage` - _run coverage report_
 
 ```
-➜  mock-x42 git:(master) yarn coverage
+➜  mock-x42 git:(master) ✗ yarn coverage
 yarn run v1.17.3
 $ nyc mocha
 
 
   mock-api test suite
-    respondTo
-      ✓ should be a function
-      ✓ should call header
-      ✓ should call status
-      ✓ should call json
-    utils test suite
-      delay
-        ✓ 1. should return a number between 500 & 3500 -- 3014
-        ✓ 2. should return a number between 500 & 3500 -- 3038
-        ✓ 3. should return a number between 500 & 3500 -- 1029
-        ✓ 4. should return a number between 500 & 3500 -- 1955
-        ✓ 5. should return a number between 500 & 3500 -- 1173
-        ✓ 6. should return a number between 500 & 3500 -- 1486
-        ✓ 7. should return a number between 500 & 3500 -- 530
-        ✓ 8. should return a number between 500 & 3500 -- 1829
-        ✓ 9. should return a number between 500 & 3500 -- 3158
     mocks test suite
       slugGet
         ✓ data: should contain 3 words by default
@@ -109,8 +93,25 @@ $ nyc mocha
       api/vins
         ✓ should respond to api/vins with array
 
+  utils test suite
+    delay
+      ✓ 1. should return a number between 500 & 3500 -- 2547
+      ✓ 2. should return a number between 500 & 3500 -- 1721
+      ✓ 3. should return a number between 500 & 3500 -- 688
+      ✓ 4. should return a number between 500 & 3500 -- 2044
+      ✓ 5. should return a number between 500 & 3500 -- 1402
+      ✓ 6. should return a number between 500 & 3500 -- 2759
+      ✓ 7. should return a number between 500 & 3500 -- 2274
+      ✓ 8. should return a number between 500 & 3500 -- 2037
+      ✓ 9. should return a number between 500 & 3500 -- 2188
+    respondTo
+      ✓ should be a function
+      ✓ should call header
+      ✓ should call status
+      ✓ should call json
 
-  55 passing (55ms)
+
+  55 passing (57ms)
 
 -----------|----------|----------|----------|----------|-------------------|
 File       |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
@@ -118,8 +119,9 @@ File       |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 All files  |      100 |      100 |      100 |      100 |                   |
  mock.js   |      100 |      100 |      100 |      100 |                   |
  router.js |      100 |      100 |      100 |      100 |                   |
+ utils.js  |      100 |      100 |      100 |      100 |                   |
 -----------|----------|----------|----------|----------|-------------------|
-✨  Done in 2.72s.
+✨  Done in 1.80s.
 ```
 
 ## dependencies
