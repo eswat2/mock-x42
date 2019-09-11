@@ -1,13 +1,19 @@
 // mock-api.test.js
-// cSpell:ignore ssns
 
 const mocha = require('mocha')
 const chai = require('chai')
-const sinon = require('sinon')
+// const sinon = require('sinon')
 
 const { describe, it } = mocha
 const { expect } = chai
-const { slugGet, ssnsGet, uuidGet, vinsGet } = require('../api/mock')
+const {
+  colorGet,
+  gtGet,
+  slugGet,
+  ssnsGet,
+  uuidGet,
+  vinsGet,
+} = require('../../api/sample/mock')
 
 const generalApi = (tag, type, value, count) => {
   describe(`generalApi test suite - ${tag}`, () => {
@@ -49,6 +55,30 @@ const generalApi = (tag, type, value, count) => {
 
 describe('mock-api test suite', () => {
   describe('mocks test suite', () => {
+    describe('colorGet', () => {
+      generalApi('color', 'string', colorGet())
+    })
+
+    describe('gtGet', () => {
+      generalApi('gt', 'object', gtGet())
+    })
+
+    describe('slugGet', () => {
+      generalApi('slug', 'string', slugGet(), 3)
+
+      it('data: should contain 3 words by default', () => {
+        const value = slugGet().data
+        const words = value.split('-')
+        expect(words).to.have.lengthOf(3)
+      })
+
+      it('data: should contain 4 words when requested', () => {
+        const value = slugGet(4).data
+        const words = value.split('-')
+        expect(words).to.have.lengthOf(4)
+      })
+    })
+
     describe('slugGet', () => {
       generalApi('slug', 'string', slugGet(), 3)
 

@@ -1,5 +1,4 @@
 // mock-api.test.js
-// cSpell:ignore ssns
 
 const mocha = require('mocha')
 const chai = require('chai')

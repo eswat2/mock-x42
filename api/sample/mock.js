@@ -1,11 +1,30 @@
 // api/mock.js
-// cSpell:ignore ssns
 
 const Chance = require('chance')
 const faker = require('faker')
 const vinGenerator = require('vin-generator')
+const { colors } = require('../data/colors')
+const gtSports = require('../data/gtSports')
 
 const chance = new Chance()
+
+const colorGet = () => {
+  const data = chance.pickone(colors)
+  return {
+    status: 200,
+    header: { 'x-mock-api': 'color' },
+    data,
+  }
+}
+
+const gtGet = () => {
+  const data = chance.pickone(gtSports.data)
+  return {
+    status: 200,
+    header: { 'x-mock-api': 'gt' },
+    data,
+  }
+}
 
 const slugGet = (count = 3) => {
   const data = faker.lorem.slug(count)
@@ -46,6 +65,8 @@ const vinsGet = (count = 3) => {
 }
 
 module.exports = {
+  colorGet,
+  gtGet,
   slugGet,
   ssnsGet,
   uuidGet,
