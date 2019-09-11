@@ -18,22 +18,37 @@
       "methods": ["GET"]
     },
     {
-      "src": "/api/slug",
+      "src": "/api/mock",
       "dest": "/server.js",
       "methods": ["GET"]
     },
     {
-      "src": "/api/ssns",
+      "src": "/api/mock/color",
       "dest": "/server.js",
       "methods": ["GET"]
     },
     {
-      "src": "/api/uuid",
+      "src": "/api/mock/gt",
       "dest": "/server.js",
       "methods": ["GET"]
     },
     {
-      "src": "/api/vins",
+      "src": "/api/mock/slug",
+      "dest": "/server.js",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/api/mock/ssns",
+      "dest": "/server.js",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/api/mock/uuid",
+      "dest": "/server.js",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/api/mock/vins",
       "dest": "/server.js",
       "methods": ["GET"]
     }
