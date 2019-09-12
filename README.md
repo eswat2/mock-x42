@@ -2,6 +2,20 @@
 
 a simple mock api server...
 
+
+## deployed
+
+- [root][api-root]
+- [api][api-api]
+- [api/mock][api-mock]
+- [api/mock/color][api-color]
+- [api/mock/gt][api-gt]
+- [api/mock/slug][api-slug]
+- [api/mock/ssns][api-ssns]
+- [api/mock/vins][api-vins]
+- [api/mock/uuid][api-uuid]
+
+
 ## usage
 
 - `yarn install`
@@ -228,6 +242,16 @@ All files     |      100 |      100 |      100 |      100 |                   |
 
 
 [eswat2-io]: https://eswat2.github.io
+
+[api-root]: https://mock-x42.eswat2.now.sh/
+[api-api]: https://mock-x42.eswat2.now.sh/api
+[api-mock]: https://mock-x42.eswat2.now.sh/api/mock
+[api-color]: https://mock-x42.eswat2.now.sh/api/mock/color
+[api-gt]: https://mock-x42.eswat2.now.sh/api/mock/gt
+[api-slug]: https://mock-x42.eswat2.now.sh/api/mock/slug
+[api-ssns]: https://mock-x42.eswat2.now.sh/api/mock/ssns
+[api-vins]: https://mock-x42.eswat2.now.sh/api/mock/vins
+[api-uuid]: https://mock-x42.eswat2.now.sh/api/mock/uuid
 
 [docker-osx]: https://docs.docker.com/docker-for-mac/
 [docker-win]: https://docs.docker.com/docker-for-windows/
