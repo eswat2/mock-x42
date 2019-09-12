@@ -36,7 +36,7 @@ describe('app router test suite', () => {
       { name: '', type: 'object', props: ['message'] },
       {
         name: '/color',
-        type: 'string',
+        type: 'object',
         headers: ['x-mock-api'],
         status: 200,
       },

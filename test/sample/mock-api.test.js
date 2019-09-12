@@ -56,7 +56,7 @@ const generalApi = (tag, type, value, count) => {
 describe('mock-api test suite', () => {
   describe('mocks test suite', () => {
     describe('colorGet', () => {
-      generalApi('color', 'string', colorGet())
+      generalApi('color', 'object', colorGet())
     })
 
     describe('gtGet', () => {

@@ -3,10 +3,11 @@
 const Chance = require('chance')
 const faker = require('faker')
 const vinGenerator = require('vin-generator')
-const { colors } = require('../data/colors')
+const clrs = require('../data/colors')
 const gtSports = require('../data/gtSports')
 
 const chance = new Chance()
+const colors = clrs.asArray()
 
 const colorGet = () => {
   const data = chance.pickone(colors)
