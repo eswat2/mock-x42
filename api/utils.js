@@ -7,6 +7,14 @@ const delay = () => {
   return chance.integer({ min: 500, max: 3500 })
 }
 
+const expandQuery = query => {
+  const keys = Object.keys(query)
+  return keys.reduce((acc, key, index) => {
+    const separator = index ? '&' : '?'
+    return `${acc}${separator}${key}=${query[key]}`
+  }, '')
+}
+
 const respondTo = (res, mock) => {
   const { status, header, data } = mock
   const keys = Object.keys(header)
@@ -18,5 +26,6 @@ const respondTo = (res, mock) => {
 
 module.exports = {
   delay,
+  expandQuery,
   respondTo,
 }

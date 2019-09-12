@@ -7,7 +7,7 @@ const sinon = require('sinon')
 const { describe, it } = mocha
 const { expect } = chai
 
-const { delay, respondTo } = require('../api/utils')
+const { delay, expandQuery, respondTo } = require('../api/utils')
 
 const fakeApi = {
   status: 200,
@@ -42,6 +42,21 @@ describe('utils test suite', () => {
       it(`${step}. should return a number between 500 & 3500 -- ${value}`, () => {
         expect(value).to.be.a('number')
         expect(value).to.be.within(500, 3500)
+      })
+    })
+  })
+
+  describe('expandQuery', () => {
+    const tests = [
+      { query: {}, result: '' },
+      { query: { foo: 1 }, result: '?foo=1' },
+      { query: { foo: 1, bar: 2 }, result: '?foo=1&bar=2' },
+    ]
+    tests.forEach(test => {
+      const value = expandQuery(test.query)
+      it(`query:  should expand to "${test.result}"`, () => {
+        expect(value).to.be.a('string')
+        expect(value).to.eql(test.result)
       })
     })
   })
