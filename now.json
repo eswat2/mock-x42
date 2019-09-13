@@ -23,6 +23,11 @@
       "methods": ["GET"]
     },
     {
+      "src": "/api/mock/auto",
+      "dest": "/server.js",
+      "methods": ["GET"]
+    },
+    {
       "src": "/api/mock/color",
       "dest": "/server.js",
       "methods": ["GET"]
