@@ -7,6 +7,7 @@ const chai = require('chai')
 const { describe, it } = mocha
 const { expect } = chai
 const {
+  autoGet,
   colorGet,
   gtGet,
   slugGet,
@@ -57,6 +58,10 @@ describe('mock-api test suite', () => {
   describe('mocks test suite', () => {
     describe('colorGet', () => {
       generalApi('color', 'object', colorGet())
+    })
+
+    describe('autoGet', () => {
+      generalApi('auto', 'object', autoGet())
     })
 
     describe('gtGet', () => {

@@ -9,6 +9,24 @@ const gtSports = require('../data/gtSports')
 const chance = new Chance()
 const colors = clrs.asArray()
 
+const autoGet = () => {
+  const color = chance.pickone(colors)
+  const { make, model, year, group } = chance.pickone(gtSports.data)
+  const vin = vinGenerator.generateVin()
+  return {
+    status: 200,
+    header: { 'x-mock-api': 'auto' },
+    data: {
+      make,
+      model,
+      group,
+      year,
+      color,
+      vin,
+    },
+  }
+}
+
 const colorGet = () => {
   const data = chance.pickone(colors)
   return {
@@ -66,6 +84,7 @@ const vinsGet = (count = 3) => {
 }
 
 module.exports = {
+  autoGet,
   colorGet,
   gtGet,
   slugGet,

@@ -35,15 +35,24 @@ describe('app router test suite', () => {
     const tests = [
       { name: '', type: 'object', props: ['message'] },
       {
+        name: '/auto',
+        type: 'object',
+        headers: ['x-mock-api'],
+        props: ['make', 'model', 'year', 'group', 'color', 'vin'],
+        status: 200,
+      },
+      {
         name: '/color',
         type: 'object',
         headers: ['x-mock-api'],
+        props: ['name', 'value'],
         status: 200,
       },
       {
         name: '/gt',
         type: 'object',
         headers: ['x-mock-api'],
+        props: ['make', 'model', 'year', 'group'],
         status: 200,
       },
       {

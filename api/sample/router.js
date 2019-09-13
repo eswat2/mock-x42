@@ -1,6 +1,7 @@
 // api/router.js
 
 const {
+  autoGet,
   colorGet,
   gtGet,
   slugGet,
@@ -18,11 +19,15 @@ const createRouter = express => {
   router.get('/', (req, res) => {
     res.json({
       message:
-        'hooray! welcome to our Mock api!... [ color, gt, slug, ssns, uuid, vins ]',
+        'hooray! welcome to our Mock api!... [ auto, color, gt, slug, ssns, uuid, vins ]',
     })
   })
 
   // more routes for our API will happen here
+
+  router.get('/auto', (req, res) => {
+    respondTo(res, autoGet())
+  })
 
   router.get('/color', (req, res) => {
     respondTo(res, colorGet())
