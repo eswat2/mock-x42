@@ -8,6 +8,7 @@ a simple mock api server...
 - [root][api-root]
 - [api][api-api]
 - [api/mock][api-mock]
+- [api/mock/auto][api-auto]
 - [api/mock/color][api-color]
 - [api/mock/gt][api-gt]
 - [api/mock/slug][api-slug]
@@ -32,7 +33,7 @@ $ nodemon server
 [nodemon] starting `node server.js`
 Magic happens here -- http://localhost:8180
          mock apis -- http://localhost:8180/api/mock
-        sample api -- http://localhost:8180/api/mock/gt
+        sample api -- http://localhost:8180/api/mock/auto
 --
 ```
 
@@ -56,7 +57,7 @@ web_1  | yarn run v1.15.2
 web_1  | $ node server
 web_1  | Magic happens here -- http://localhost:8180
 web_1  |          mock apis -- http://localhost:8180/api/mock
-web_1  |         sample api -- http://localhost:8180/api/mock/gt
+web_1  |         sample api -- http://localhost:8180/api/mock/auto
 web_1  | --
 
 ```
@@ -69,139 +70,6 @@ web_1  | --
 
 
 ```
-➜ mock-api git:(master) ✗ yarn coverage
-yarn run v1.17.3
-$ nyc mocha --recursive
-
-
-  gtSports test suite
-    ✓ data: should be an array
-    ✓ total: should be an number
-    ✓ total: should be equal to the length of data
-    ✓ filters: should be an object
-    filters test suite
-      ✓ nonExotics: should exist in filters
-      ✓ nonExotics: should filter data
-      ✓ exotics: should exist in filters
-      ✓ exotics: should filter data
-      ✓ makes: should exist in filters
-      ✓ makes: should filter data
-      ✓ groups: should exist in filters
-      ✓ groups: should filter data
-
-  mock-api test suite
-    mocks test suite
-      colorGet
-        generalApi test suite - color
-          ✓ api: should be a function
-          ✓ api: should return an object
-          ✓ api: should include 3 properties: status, header, data
-          ✓ api: should return status set to 200
-          ✓ api; should return header with x-mock-api color
-          ✓ api: should return data as string
-      gtGet
-        generalApi test suite - gt
-          ✓ api: should be a function
-          ✓ api: should return an object
-          ✓ api: should include 3 properties: status, header, data
-          ✓ api: should return status set to 200
-          ✓ api; should return header with x-mock-api gt
-          ✓ api: should return data as object
-      slugGet
-        ✓ data: should contain 3 words by default
-        ✓ data: should contain 4 words when requested
-        generalApi test suite - slug
-          ✓ api: should be a function
-          ✓ api: should return an object
-          ✓ api: should include 3 properties: status, header, data
-          ✓ api: should return status set to 200
-          ✓ api; should return header with x-mock-api slug
-          ✓ api; should return header with x-mock-count 3
-          ✓ api: should return data as string
-      slugGet
-        ✓ data: should contain 3 words by default
-        ✓ data: should contain 4 words when requested
-        generalApi test suite - slug
-          ✓ api: should be a function
-          ✓ api: should return an object
-          ✓ api: should include 3 properties: status, header, data
-          ✓ api: should return status set to 200
-          ✓ api; should return header with x-mock-api slug
-          ✓ api; should return header with x-mock-count 3
-          ✓ api: should return data as string
-      ssnsGet
-        ✓ data: should return 3 items by default
-        ✓ data: should return 10 items when requested
-        generalApi test suite - ssns
-          ✓ api: should be a function
-          ✓ api: should return an object
-          ✓ api: should include 3 properties: status, header, data
-          ✓ api: should return status set to 200
-          ✓ api; should return header with x-mock-api ssns
-          ✓ api; should return header with x-mock-count 3
-          ✓ api: should return data as array
-      uuidGet
-        ✓ data: should contain dashes
-        ✓ data: should contain dashes -- 5
-        generalApi test suite - uuid
-          ✓ api: should be a function
-          ✓ api: should return an object
-          ✓ api: should include 3 properties: status, header, data
-          ✓ api: should return status set to 200
-          ✓ api; should return header with x-mock-api uuid
-          ✓ api: should return data as string
-      vinsGet
-        ✓ data: should return 3 items by default
-        ✓ data: should return 10 items when requested
-        generalApi test suite - vins
-          ✓ api: should be a function
-          ✓ api: should return an object
-          ✓ api: should include 3 properties: status, header, data
-          ✓ api: should return status set to 200
-          ✓ api; should return header with x-mock-api vins
-          ✓ api; should return header with x-mock-count 3
-          ✓ api: should return data as array
-
-  app router test suite
-    createRouter
-      ✓ should be a function
-      ✓ should return an object
-    api test suite
-      GET: api
-        ✓ should respond to api with object
-      GET: api/color
-        ✓ should respond to api/color with string
-      GET: api/gt
-        ✓ should respond to api/gt with object
-      GET: api/slug
-        ✓ should respond to api/slug with string
-      GET: api/ssns
-        ✓ should respond to api/ssns with array
-      GET: api/uuid
-        ✓ should respond to api/uuid with string
-      GET: api/vins
-        ✓ should respond to api/vins with array
-
-  utils test suite
-    delay
-      ✓ 1. should return a number between 500 & 3500 -- 3483
-      ✓ 2. should return a number between 500 & 3500 -- 1998
-      ✓ 3. should return a number between 500 & 3500 -- 1808
-      ✓ 4. should return a number between 500 & 3500 -- 2114
-      ✓ 5. should return a number between 500 & 3500 -- 3033
-      ✓ 6. should return a number between 500 & 3500 -- 3415
-      ✓ 7. should return a number between 500 & 3500 -- 2949
-      ✓ 8. should return a number between 500 & 3500 -- 890
-      ✓ 9. should return a number between 500 & 3500 -- 2326
-    respondTo
-      ✓ should be a function
-      ✓ should call header
-      ✓ should call status
-      ✓ should call json
-
-
-  90 passing (64ms)
-
 --------------|----------|----------|----------|----------|-------------------|
 File          |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 --------------|----------|----------|----------|----------|-------------------|
@@ -246,6 +114,7 @@ All files     |      100 |      100 |      100 |      100 |                   |
 [api-root]: https://mock-x42.eswat2.now.sh/
 [api-api]: https://mock-x42.eswat2.now.sh/api
 [api-mock]: https://mock-x42.eswat2.now.sh/api/mock
+[api-color]: https://mock-x42.eswat2.now.sh/api/mock/auto
 [api-color]: https://mock-x42.eswat2.now.sh/api/mock/color
 [api-gt]: https://mock-x42.eswat2.now.sh/api/mock/gt
 [api-slug]: https://mock-x42.eswat2.now.sh/api/mock/slug
