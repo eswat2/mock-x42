@@ -114,7 +114,7 @@ All files     |      100 |      100 |      100 |      100 |                   |
 [api-root]: https://mock-x42.eswat2.now.sh/
 [api-api]: https://mock-x42.eswat2.now.sh/api
 [api-mock]: https://mock-x42.eswat2.now.sh/api/mock
-[api-color]: https://mock-x42.eswat2.now.sh/api/mock/auto
+[api-auto]: https://mock-x42.eswat2.now.sh/api/mock/auto
 [api-color]: https://mock-x42.eswat2.now.sh/api/mock/color
 [api-gt]: https://mock-x42.eswat2.now.sh/api/mock/gt
 [api-slug]: https://mock-x42.eswat2.now.sh/api/mock/slug
