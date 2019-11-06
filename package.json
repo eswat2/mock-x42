@@ -30,7 +30,8 @@
     "down": "docker-compose down",
     "lint": "eslint .",
     "cc": "prettier --check './**/*.js'",
-    "spell": "cspell './**/*.js'"
+    "spell": "cspell './**/*.js'",
+    "open": "open https://mock-x42-git-master.eswat2.now.sh"
   },
   "devDependencies": {
     "chai": "4.2.0",
