@@ -8,6 +8,7 @@ const express = require('express') // call express
 const app = express() // define our app using express
 const bodyParser = require('body-parser')
 const mock = require('./api/sample/router')
+const uuid = require('./api/uuid/router')
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -44,6 +45,10 @@ const port = process.env.PORT || 8180 // set our port
   const router = mock.createRouter(express)
   app.use('/api/mock', router)
 }
+{
+  const router = uuid.createRouter(express)
+  app.use('/api/uuid', router)
+}
 
 app.get('/api', function(req, res) {
   res.json({ message: 'hooray! welcome to our api server!... [ mock ]' })
@@ -74,4 +79,5 @@ app.listen(port)
 console.log(`Magic happens here -- http://localhost:${port}`)
 console.log(`         mock apis -- http://localhost:${port}/api/mock`)
 console.log(`        sample api -- http://localhost:${port}/api/mock/auto`)
+console.log(`          uuid api -- http://localhost:${port}/api/uuid`)
 console.log('--')
