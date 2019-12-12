@@ -56,6 +56,11 @@
       "src": "/api/mock/vins",
       "dest": "/server.js",
       "methods": ["GET"]
+    },
+    {
+      "src": "/api/uuid",
+      "dest": "/server.js",
+      "methods": ["GET"]
     }
   ]
 }
