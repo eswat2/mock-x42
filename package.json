@@ -31,7 +31,8 @@
     "lint": "eslint .",
     "cc": "prettier --check './**/*.js'",
     "spell": "cspell './**/*.js'",
-    "open": "open https://mock-x42-git-master.eswat2.now.sh"
+    "open": "open https://mock-x42-git-master.eswat2.now.sh",
+    "uuid": "open https://mock-x42-git-master.eswat2.now.sh/api/uuid"
   },
   "devDependencies": {
     "chai": "4.2.0",
