@@ -24,7 +24,7 @@
     "test": "mocha --recursive",
     "ct": "mocha --recursive --watch",
     "coverage": "nyc mocha --recursive",
-    "deploy": "echo skipping for now",
+    "deploy": "now --prod",
     "build": "docker-compose build",
     "up": "docker-compose up",
     "down": "docker-compose down",
