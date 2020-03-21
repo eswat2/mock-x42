@@ -7,7 +7,7 @@ const delay = () => {
   return chance.integer({ min: 500, max: 3500 })
 }
 
-const expandQuery = query => {
+const expandQuery = (query) => {
   const keys = Object.keys(query)
   return keys.reduce((acc, key, index) => {
     const separator = index ? '&' : '?'
@@ -18,7 +18,7 @@ const expandQuery = query => {
 const respondTo = (res, mock) => {
   const { status, header, data } = mock
   const keys = Object.keys(header)
-  keys.forEach(key => {
+  keys.forEach((key) => {
     res.header(key, header[key])
   })
   res.status(status).json(data)

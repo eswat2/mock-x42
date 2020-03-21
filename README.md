@@ -2,7 +2,6 @@
 
 a simple mock api server...
 
-
 ## deployed
 
 - [root][api-root]
@@ -16,12 +15,10 @@ a simple mock api server...
 - [api/mock/vins][api-vins]
 - [api/mock/uuid][api-uuid]
 
-
 ## usage
 
 - `yarn install`
 - `yarn dev` - _uses nodemon, see below_
-
 
 ```
 ➜ mock-api git:(master) yarn dev
@@ -45,7 +42,6 @@ if you prefer, you can run this in docker.
 - `yarn up` - _docker-compose up_
 - `yarn down` - _docker-compose down_
 
-
 ```
 ➜ mock-api git:(master) ✗ yarn up
 yarn run v1.17.3
@@ -67,7 +63,6 @@ web_1  | --
 - `yarn test` - _run tests, single pass_
 - `yarn ct` - _run tests, continuously_
 - `yarn coverage` - _run coverage report_
-
 
 ```
 --------------|----------|----------|----------|----------|-------------------|
@@ -102,15 +97,12 @@ All files     |      100 |      100 |      100 |      100 |                   |
 - [Sinon][sinon-js] - _test spies, stubs and mocks_
 - [vin-generator][vin-gen]
 
-
 ## who
 
 - Richard Hess
 - [https://eswat2.github.io][eswat2-io]
 
-
 [eswat2-io]: https://eswat2.github.io
-
 [api-root]: https://mock-x42.eswat2.now.sh/
 [api-api]: https://mock-x42.eswat2.now.sh/api
 [api-mock]: https://mock-x42.eswat2.now.sh/api/mock
@@ -121,10 +113,8 @@ All files     |      100 |      100 |      100 |      100 |                   |
 [api-ssns]: https://mock-x42.eswat2.now.sh/api/mock/ssns
 [api-vins]: https://mock-x42.eswat2.now.sh/api/mock/vins
 [api-uuid]: https://mock-x42.eswat2.now.sh/api/mock/uuid
-
 [docker-osx]: https://docs.docker.com/docker-for-mac/
 [docker-win]: https://docs.docker.com/docker-for-windows/
-
 [chai-js]: https://www.chaijs.com/
 [chai-io]: https://www.chaijs.com/plugins/chai-http/
 [chance-js]: https://chancejs.com/
@@ -135,5 +125,3 @@ All files     |      100 |      100 |      100 |      100 |                   |
 [nyc-js]: https://github.com/istanbuljs/nyc
 [sinon-js]: https://sinonjs.org/
 [vin-gen]: https://github.com/ArchmageInc/vin-generator
-
-

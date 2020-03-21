@@ -24,11 +24,11 @@ const res = {
     header(key, value)
     return res
   },
-  status: code => {
+  status: (code) => {
     status(code)
     return res
   },
-  json: data => {
+  json: (data) => {
     json(data)
     return res
   },
@@ -37,7 +37,7 @@ const res = {
 describe('utils test suite', () => {
   describe('delay', () => {
     const tests = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    tests.forEach(step => {
+    tests.forEach((step) => {
       const value = delay()
       it(`${step}. should return a number between 500 & 3500 -- ${value}`, () => {
         expect(value).to.be.a('number')
@@ -52,7 +52,7 @@ describe('utils test suite', () => {
       { query: { foo: 1 }, result: '?foo=1' },
       { query: { foo: 1, bar: 2 }, result: '?foo=1&bar=2' },
     ]
-    tests.forEach(test => {
+    tests.forEach((test) => {
       const value = expandQuery(test.query)
       it(`query:  should expand to "${test.result}"`, () => {
         expect(value).to.be.a('string')

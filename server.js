@@ -50,11 +50,11 @@ const port = process.env.PORT || 8180 // set our port
   app.use('/api/uuid', router)
 }
 
-app.get('/api', function(req, res) {
+app.get('/api', function (req, res) {
   res.json({ message: 'hooray! welcome to our api server!... [ mock ]' })
 })
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.json({ message: 'hooray! welcome to our server!...' })
 })
 

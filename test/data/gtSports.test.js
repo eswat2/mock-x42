@@ -22,7 +22,7 @@ describe('gtSports test suite', () => {
   })
 
   describe('filters test suite', () => {
-    props.forEach(prop => {
+    props.forEach((prop) => {
       it(`${prop}: should exist in filters`, () => {
         expect(filters).to.have.property(prop)
       })

@@ -20,7 +20,7 @@ const colors = {
 
 const asArray = () => {
   const keys = Object.keys(colors)
-  return keys.map(key => {
+  return keys.map((key) => {
     return { name: key, value: colors[key] }
   })
 }
@@ -31,7 +31,7 @@ const names = () => {
 
 const values = () => {
   const keys = Object.keys(colors)
-  return keys.map(key => {
+  return keys.map((key) => {
     return colors[key]
   })
 }

@@ -17,7 +17,7 @@ const uuidGet = () => {
 
 // ROUTE Factory for our API
 // =============================================================================
-const createRouter = express => {
+const createRouter = (express) => {
   const router = express.Router() // get an instance of the express Router
 
   router.get('/', (req, res) => {

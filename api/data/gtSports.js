@@ -1787,25 +1787,25 @@ const data = [
 
 const total = data.length
 
-const exotics = data => {
-  return data.filter(item => {
+const exotics = (data) => {
+  return data.filter((item) => {
     return item.group.includes('Gr')
   })
 }
 
-const nonExotics = data => {
-  return data.filter(item => {
+const nonExotics = (data) => {
+  return data.filter((item) => {
     return !item.group.includes('Gr')
   })
 }
 
-const groups = data => {
+const groups = (data) => {
   return data.reduce((list, item) => {
     return list.includes(item.group) ? list : [...list, item.group]
   }, [])
 }
 
-const makes = data => {
+const makes = (data) => {
   return data.reduce((list, item) => {
     return list.includes(item.make) ? list : [...list, item.make]
   }, [])

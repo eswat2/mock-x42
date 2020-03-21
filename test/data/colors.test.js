@@ -18,7 +18,7 @@ describe('colors test suite', () => {
   })
 
   describe('api test suite', () => {
-    apis.forEach(api => {
+    apis.forEach((api) => {
       it(`${api.name}: should exist in export`, () => {
         expect(clrs).to.have.property(api.name)
       })

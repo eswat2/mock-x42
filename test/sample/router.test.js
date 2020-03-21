@@ -83,7 +83,7 @@ describe('app router test suite', () => {
       },
     ]
 
-    tests.forEach(api => {
+    tests.forEach((api) => {
       describe(`GET: api${api.name}`, () => {
         it(`should respond to api${api.name} with ${api.type}`, () => {
           chai
@@ -102,12 +102,12 @@ describe('app router test suite', () => {
                 res.body.length.should.be.eql(api.count)
               }
               if (api.props) {
-                api.props.forEach(prop => {
+                api.props.forEach((prop) => {
                   res.body.should.have.property(prop)
                 })
               }
               if (api.headers) {
-                api.headers.forEach(header => {
+                api.headers.forEach((header) => {
                   res.headers.should.have.property(header)
                 })
               }
