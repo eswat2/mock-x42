@@ -35,7 +35,7 @@
     "uuid": "open https://mock-x42-git-master.eswat2.now.sh/api/uuid"
   },
   "devDependencies": {
-    "chai": "4.3.0",
+    "chai": "4.3.3",
     "chai-http": "4.3.0",
     "mocha": "8.3.0",
     "nyc": "15.1.0",
