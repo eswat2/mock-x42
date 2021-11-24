@@ -24,15 +24,15 @@
     "test": "mocha --recursive",
     "ct": "mocha --recursive --watch",
     "coverage": "nyc mocha --recursive",
-    "deploy": "now --prod",
+    "deploy": "vc --prod",
     "build": "docker-compose build",
     "up": "docker-compose up",
     "down": "docker-compose down",
     "lint": "eslint .",
     "cc": "prettier --check './**/*.js'",
     "spell": "cspell './**/*.js'",
-    "open": "open https://mock-x42-git-master.eswat2.now.sh",
-    "uuid": "open https://mock-x42-git-master.eswat2.now.sh/api/uuid"
+    "open": "open https://mock-x42.vercel.app",
+    "uuid": "open https://mock-x42.vercel.app/api/uuid"
   },
   "devDependencies": {
     "chai": "4.3.4",
