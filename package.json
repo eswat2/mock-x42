@@ -31,8 +31,8 @@
     "lint": "eslint .",
     "cc": "prettier --check './**/*.js'",
     "spell": "cspell './**/*.js'",
-    "open": "open https://mock-x42.vercel.app",
-    "uuid": "open https://mock-x42.vercel.app/api/uuid"
+    "open": "open https://mock-x42-eswat2.vercel.app",
+    "uuid": "open https://mock-x42-eswat2.vercel.app/api/uuid"
   },
   "devDependencies": {
     "chai": "4.3.4",
