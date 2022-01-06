@@ -45,7 +45,7 @@ const gtGet = () => {
 }
 
 const slugGet = (count = 3) => {
-  const data = chance.unique(chance.word, count, { length: 5 });
+  const data = chance.unique(chance.word, count, { length: 5 }).join('-');
   return {
     status: 200,
     header: { 'x-mock-api': 'slug', 'x-mock-count': count },
