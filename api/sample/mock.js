@@ -1,13 +1,14 @@
 // api/mock.js
 
 const Chance = require('chance')
-const faker = require('faker')
+const LoremIpsum = require("lorem-ipsum").LoremIpsum
 const vinGenerator = require('vin-generator')
 const clrs = require('../data/colors')
 const gtSports = require('../data/gtSports')
 
 const chance = new Chance()
 const colors = clrs.asArray()
+const lorem = new LoremIpsum();
 
 const autoGet = () => {
   const color = chance.pickone(colors)
@@ -46,10 +47,11 @@ const gtGet = () => {
 }
 
 const slugGet = (count = 3) => {
-  const data = faker.lorem.slug(count)
+  const num = parseInt(count)
+  const data = lorem.generateWords(num).split(' ');
   return {
     status: 200,
-    header: { 'x-mock-api': 'slug', 'x-mock-count': count },
+    header: { 'x-mock-api': 'slug', 'x-mock-count': num },
     data,
   }
 }
@@ -65,8 +67,15 @@ const ssnsGet = (count = 3, dashes) => {
   }
 }
 
+// NOTE:  simple UUID generator to replace faker...
+function b(a) {
+  return a
+    ? (a ^ ((Math.random() * 16) >> (a / 4))).toString(16)
+    : ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, b)
+}
+
 const uuidGet = () => {
-  const data = faker.random.uuid()
+  const data = b();
   return {
     status: 200,
     header: { 'x-mock-api': 'uuid' },
