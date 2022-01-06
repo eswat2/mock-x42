@@ -14,7 +14,6 @@
     "chance": "1.1.8",
     "express": "4.17.2",
     "fs": "0.0.2",
-    "lorem-ipsum": "2.0.4",
     "node-cache": "5.1.2",
     "vin-generator": "1.0.1"
   },

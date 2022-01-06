@@ -1,14 +1,12 @@
 // api/mock.js
 
 const Chance = require('chance')
-const LoremIpsum = require("lorem-ipsum").LoremIpsum
 const vinGenerator = require('vin-generator')
 const clrs = require('../data/colors')
 const gtSports = require('../data/gtSports')
 
 const chance = new Chance()
 const colors = clrs.asArray()
-const lorem = new LoremIpsum();
 
 const autoGet = () => {
   const color = chance.pickone(colors)
@@ -47,11 +45,10 @@ const gtGet = () => {
 }
 
 const slugGet = (count = 3) => {
-  const num = parseInt(count)
-  const data = lorem.generateWords(num).split(' ');
+  const data = chance.unique(chance.word, count, { length: 5 });
   return {
     status: 200,
-    header: { 'x-mock-api': 'slug', 'x-mock-count': num },
+    header: { 'x-mock-api': 'slug', 'x-mock-count': count },
     data,
   }
 }

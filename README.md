@@ -90,7 +90,6 @@ All files     |      100 |      100 |      100 |      100 |                   |
 - [Docker Desktop for OSX][docker-osx]
 - [Docker Desktop for Windows][docker-win]
 - [Istanbul][ist-js] - _JavaScript test coverage made simple_
-- [lorem-ipsum][lorem-js] - _generate lorem ipsum placeholder text_
 - [Mocha][mocha-js] - _a JavaScript test framework_
 - [nodemon][nodemon-io] - _reload, automatically_
 - [nyc][nyc-js] - _the Istanbul command line interface_
