@@ -86,11 +86,11 @@ All files     |      100 |      100 |      100 |      100 |                   |
 
 - [Chai][chai-js] - _a BDD / TDD assertion library_
 - [Chai-HTTP][chai-io] - _HTTP integration testing with Chai assertions._
-- [Chance][chance-js]
+- [Chance][chance-js] - _a minimalist generator of random stuff_
 - [Docker Desktop for OSX][docker-osx]
 - [Docker Desktop for Windows][docker-win]
-- [Faker][faker-js]
 - [Istanbul][ist-js] - _JavaScript test coverage made simple_
+- [lorem-ipsum][lorem-js] - _generate lorem ipsum placeholder text_
 - [Mocha][mocha-js] - _a JavaScript test framework_
 - [nodemon][nodemon-io] - _reload, automatically_
 - [nyc][nyc-js] - _the Istanbul command line interface_
@@ -103,23 +103,23 @@ All files     |      100 |      100 |      100 |      100 |                   |
 - [https://eswat2.github.io][eswat2-io]
 
 [eswat2-io]: https://eswat2.github.io
-[api-root]: https://mock-x42.eswat2.now.sh/
-[api-api]: https://mock-x42.eswat2.now.sh/api
-[api-mock]: https://mock-x42.eswat2.now.sh/api/mock
-[api-auto]: https://mock-x42.eswat2.now.sh/api/mock/auto
-[api-color]: https://mock-x42.eswat2.now.sh/api/mock/color
-[api-gt]: https://mock-x42.eswat2.now.sh/api/mock/gt
-[api-slug]: https://mock-x42.eswat2.now.sh/api/mock/slug
-[api-ssns]: https://mock-x42.eswat2.now.sh/api/mock/ssns
-[api-vins]: https://mock-x42.eswat2.now.sh/api/mock/vins
-[api-uuid]: https://mock-x42.eswat2.now.sh/api/mock/uuid
+[api-root]: https://mock-x42.vercel.app/
+[api-api]: https://mock-x42.vercel.app/api
+[api-mock]: https://mock-x42.vercel.app/api/mock
+[api-auto]: https://mock-x42.vercel.app/api/mock/auto
+[api-color]: https://mock-x42.vercel.app/api/mock/color
+[api-gt]: https://mock-x42.vercel.app/api/mock/gt
+[api-slug]: https://mock-x42.vercel.app/api/mock/slug
+[api-ssns]: https://mock-x42.vercel.app/api/mock/ssns
+[api-vins]: https://mock-x42.vercel.app/api/mock/vins
+[api-uuid]: https://mock-x42.vercel.app/api/mock/uuid
 [docker-osx]: https://docs.docker.com/docker-for-mac/
 [docker-win]: https://docs.docker.com/docker-for-windows/
 [chai-js]: https://www.chaijs.com/
 [chai-io]: https://www.chaijs.com/plugins/chai-http/
 [chance-js]: https://chancejs.com/
-[faker-js]: https://github.com/marak/Faker.js/
 [ist-js]: https://istanbul.js.org/
+[lorem-js]: https://github.com/knicklabs/lorem-ipsum.js
 [mocha-js]: https://mochajs.org/
 [nodemon-io]: https://nodemon.io/
 [nyc-js]: https://github.com/istanbuljs/nyc
