@@ -23,6 +23,7 @@
     "test": "mocha --recursive",
     "ct": "mocha --recursive --watch",
     "coverage": "nyc mocha --recursive",
+    "predeploy": "yarn version --patch",
     "deploy": "vc --prod",
     "build": "docker-compose build",
     "up": "docker-compose up",
