@@ -9,7 +9,8 @@
     "clrs",
     "pickone",
     "predeploy",
-    "ssns"
+    "ssns",
+    "vercel"
   ],
   "ignorePaths": [
     "cSpell.json",
