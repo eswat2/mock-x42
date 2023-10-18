@@ -1,6 +1,6 @@
 {
   "name": "mock-x42",
-  "version": "0.0.63",
+  "version": "0.0.64",
   "private": true,
   "main": "server.js",
   "prettier": {
@@ -39,6 +39,6 @@
     "mocha": "10.2.0",
     "nyc": "15.1.0",
     "prettier": "3.0.3",
-    "sinon": "16.1.1"
+    "sinon": "15.2.0"
   }
 }
