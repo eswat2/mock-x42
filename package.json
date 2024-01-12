@@ -1,6 +1,6 @@
 {
   "name": "mock-x42",
-  "version": "0.0.69",
+  "version": "0.0.70",
   "private": true,
   "main": "server.js",
   "prettier": {
