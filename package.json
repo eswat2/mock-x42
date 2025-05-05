@@ -3,6 +3,9 @@
   "version": "0.0.124",
   "private": true,
   "main": "server.js",
+  "engines": {
+    "node": "22.x"
+  },
   "prettier": {
     "trailingComma": "es5",
     "tabWidth": 2,
