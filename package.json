@@ -39,7 +39,7 @@
   "devDependencies": {
     "chai": "6.0.1",
     "chai-http": "5.1.2",
-    "mocha": "11.7.1",
+    "mocha": "11.7.2",
     "nyc": "17.1.0",
     "prettier": "3.6.2",
     "sinon": "21.0.0"
