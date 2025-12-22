@@ -37,7 +37,7 @@
     "uuid": "open https://mock-x42.vercel.app/api/uuid"
   },
   "devDependencies": {
-    "chai": "6.2.1",
+    "chai": "6.2.2",
     "chai-http": "5.1.2",
     "mocha": "11.7.5",
     "nyc": "17.1.0",
